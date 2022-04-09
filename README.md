@@ -1,5 +1,5 @@
-<img src="https://img.shields.io/github/downloads/xnojustice/electron-react-okey-card-app/total" alt="total" />
-<img src="" alt="okey-card" />
+<img src="https://img.shields.io/github/downloads/xnojustice/electron-react-catch-king-app/total" alt="total" />
+<img src="https://github.com/xNoJustice/electron-react-catch-king-app/blob/4752bc88781d1bfa2538927c830b735c371976c8/app.gif" alt="catch-the-king" />
 
 ## Install for develop
 
@@ -8,7 +8,7 @@ If you get any error use Administrator CMD
 
 ```bash
 git clone
-cd electron-react-okey-card-app
+cd electron-react-catch-king-app
 yarn
 yarn start #dev
 yarn package #prod
