@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "electron-react-catch-king-app",
   "description": "A foundation for scalable desktop apps",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -31,8 +31,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "com.catchKing.electron",
+    "appId": "ElectronCatchKing",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -41,44 +41,13 @@
       "package.json"
     ],
     "afterSign": ".erb/scripts/notarize.js",
-    "mac": {
-      "target": {
-        "target": "default",
-        "arch": [
-          "arm64",
-          "x64"
-        ]
-      },
-      "type": "distribution",
-      "hardenedRuntime": true,
-      "entitlements": "assets/entitlements.mac.plist",
-      "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false
-    },
-    "dmg": {
-      "contents": [
-        {
-          "x": 130,
-          "y": 220
-        },
-        {
-          "x": 410,
-          "y": 220,
-          "type": "link",
-          "path": "/Applications"
-        }
-      ]
-    },
     "win": {
       "target": [
-        "nsis"
+        "portable"
       ]
     },
-    "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "category": "Development"
+    "portable": {
+      "artifactName": "ElectronCatchKing.exe"
     },
     "directories": {
       "app": "release/app",
@@ -90,37 +59,26 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "xNoJustice",
+      "repo": "electron-react-catch-king-app"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/xNoJustice/electron-react-catch-king-app.git"
   },
-  "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
-  },
-  "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    },
-    {
-      "name": "John Tran",
-      "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
-    }
-  ],
+  "author": "xNoJustice",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/xNoJustice/electron-react-catch-king-app/issues"
   },
   "keywords": [
     "electron",
+    "okey",
+    "okey-card",
+    "okey-card-app",
+    "okey-card-helper",
+    "okey-helper",
     "boilerplate",
     "react",
     "typescript",
@@ -130,7 +88,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/xNoJustice/electron-react-catch-king-app#readme",
   "jest": {
     "testURL": "http://localhost/",
     "testEnvironment": "jsdom",
@@ -174,6 +132,7 @@
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
+    "autoprefixer": "^10.4.4",
     "browserslist-config-erb": "^0.0.3",
     "chalk": "^4.1.2",
     "concurrently": "^7.1.0",
@@ -208,6 +167,8 @@
     "lint-staged": "^12.3.7",
     "mini-css-extract-plugin": "^2.6.0",
     "opencollective-postinstall": "^2.0.3",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
     "prettier": "^2.6.2",
     "react-refresh": "^0.12.0",
     "react-refresh-typescript": "^2.0.4",
@@ -216,6 +177,7 @@
     "sass": "^1.49.11",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.23",
     "terser-webpack-plugin": "^5.3.1",
     "ts-jest": "^27.1.4",
     "ts-loader": "^9.2.8",
