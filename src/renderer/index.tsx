@@ -1,10 +1,11 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import 'tailwindcss/tailwind.css';
 
-ReactDOM.render(
+const container = document.getElementById('root')!;
+const root = createRoot(container);
+root.render(
   <div className="bg-gray-700 w-full min-h-screen h-auto flex justify-center items-center font-sans">
     <App />
-  </div>,
-  document.getElementById('root')
+  </div>
 );
